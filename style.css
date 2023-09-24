@@ -109,4 +109,5 @@ body {
 
 #board .pixel {
   border: 1px solid #11111105;
+  background-color: rgba(2, 2, 2, 0);
 }
