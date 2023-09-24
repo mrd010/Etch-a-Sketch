@@ -8,7 +8,9 @@ let pixelCount = 0;
 // Board Consts
 const board = document.querySelector("#board");
 
-function createBoard() {
+// functions
+
+function updateBoardSize() {
   const boardWidth = boardSizeInput.value;
   if (pixelCount != boardWidth ** 2) {
     while (pixelCount <= boardWidth ** 2) {
@@ -28,11 +30,11 @@ function createBoard() {
 }
 
 function InitializeBoard() {
-  createBoard();
+  updateBoardSize();
 }
 
 function changeBoardSize() {
-  createBoard();
+  updateBoardSize();
 }
 
 InitializeBoard();
