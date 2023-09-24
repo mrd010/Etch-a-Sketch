@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Etch-A-Sketch</title>
+    <!-- css -->
+    <link rel="stylesheet" href="./style.css" type="text/css" />
+    <!-- script -->
+    <script src="./script.js"></script>
+  </head>
+  <body>
+    <!-- side menu -->
+    <nav class="side-nav">
+      <div class="header">
+        <h2>Etch-A-Sketch</h2>
+      </div>
+      <div class="options-menu">
+        <input type="number" name="grid-width" id="grid-width" />
+        <button class="menu-button" id="change-button">Change</button>
+      </div>
+      <div class="options-menu">
+        <button class="menu-button" id="reset-button">
+          Reset Current Board
+        </button>
+      </div>
+    </nav>
+    <div class="container" id="board"></div>
+  </body>
+</html>
