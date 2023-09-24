@@ -3,10 +3,12 @@ const boardSizeInput = document.querySelector("#grid-width");
 const changeBoardSizeBtn = document.querySelector("#change-button");
 const resetBoardBtn = document.querySelector("#reset-button");
 
-let pixelCount = 0;
-
 // Board Consts
 const board = document.querySelector("#board");
+
+// variables
+let pixels = board.querySelectorAll(".pixel");
+let pixelCount = 0;
 
 // functions
 
@@ -27,6 +29,11 @@ function updateBoardSize() {
       pixelCount--;
     }
     board.style.cssText = `grid-template-rows: repeat(${boardWidth}, 1fr);grid-template-columns: repeat(${boardWidth}, 1fr);`;
+
+    pixels = board.querySelectorAll(".pixel");
+    pixels.forEach((pixel) => {
+      pixel.addEventListener("mouseover", paintPixel);
+    });
   }
 }
 
@@ -41,6 +48,27 @@ function correctInput() {
   }
 }
 
+function paintPixel() {
+  // get pixel background color current opacity
+  let pixelBgColor =
+    getComputedStyle(this).getPropertyValue("background-color");
+  let splitedColor = pixelBgColor.split(",");
+
+  let currentOpacity =
+    splitedColor.length == 4 ? Number(splitedColor[3].slice(1, -1)) : 1;
+
+  //   set new color if opacity is less than 1
+  if (currentOpacity < 1) {
+    let newOpacity = currentOpacity + 0.1;
+    if (newOpacity > 1) {
+      newOpacity = Math.floor(newOpacity);
+    }
+    splitedColor[3] = ` ${newOpacity})`;
+    let newPixelBgColor = splitedColor.join();
+
+    this.style.backgroundColor = newPixelBgColor;
+  }
+}
 // MAIN ----------------------------------------------------------------------------------------------------------
 
 // Initialize Board
