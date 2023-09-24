@@ -1,0 +1,88 @@
+:root {
+  --BG: whitesmoke;
+  --THEME: dodgerblue;
+  --THEME-Dark: ;
+  --DARK-Color: #222;
+  --HIGHLIGHT-Color: rgba(245, 245, 245, 0.9);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  background-color: var(--BG);
+  display: flex;
+  height: 100vh;
+}
+
+/* Side Nav Menu */
+
+.side-nav {
+  background-color: var(--THEME);
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  width: 300px;
+  align-items: center;
+  user-select: none;
+}
+
+.side-nav .header {
+  color: var(--BG);
+  font-size: 1.5rem;
+  text-align: center;
+  white-space: nowrap;
+  margin: 20px 0 200px 0;
+}
+
+.side-nav .options-menu {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin-bottom: 30px;
+  gap: 10px;
+}
+
+.options-menu * {
+  font-size: 1rem;
+}
+
+.options-menu .input-field {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.options-menu .input-field input[type="number"] {
+  padding: 5px 5px 5px 10px;
+  outline: none;
+  width: 100%;
+}
+
+.input-field label {
+  color: var(--BG);
+  padding: 5px;
+  font-weight: 700;
+}
+
+.side-nav button,
+.options-menu input {
+  border: none;
+  border-radius: 6px;
+  background-color: var(--BG);
+  color: var(--DARK-Color);
+}
+
+.side-nav button {
+  text-align: center;
+  cursor: pointer;
+  padding: 12px 0;
+}
+
+.side-nav button:hover {
+  background-color: var(--HIGHLIGHT-Color);
+}
