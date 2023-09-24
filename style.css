@@ -96,8 +96,9 @@ body {
 }
 
 #board {
-  width: 600px;
-  height: 600px;
+  margin: 0 20px;
+  width: 900px;
+  height: 900px;
   background-color: white;
   border: 3px solid var(--DARK-Color);
   border-radius: 5px;
