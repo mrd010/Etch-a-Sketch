@@ -3,24 +3,37 @@ const boardSizeInput = document.querySelector("#grid-width");
 const changeBoardSizeBtn = document.querySelector("#change-button");
 const resetBoardBtn = document.querySelector("#reset-button");
 
+let pixelCount = 0;
+
 // Board Consts
 const board = document.querySelector("#board");
 
-function boardInitialize() {
+function createBoard() {
   const boardWidth = boardSizeInput.value;
-
-  for (let i = 0; i < boardWidth; i++) {
-    for (let j = 0; j < boardWidth; j++) {
+  if (pixelCount != boardWidth ** 2) {
+    while (pixelCount <= boardWidth ** 2) {
       let newPixel = document.createElement("div");
       newPixel.classList.add("pixel");
       board.appendChild(newPixel);
+      pixelCount++;
     }
+
+    while (pixelCount > boardWidth ** 2) {
+      let oldPixel = board.querySelector("div");
+      board.removeChild(oldPixel);
+      pixelCount--;
+    }
+    board.style.cssText = `grid-template-rows: repeat(${boardWidth}, 1fr);grid-template-columns: repeat(${boardWidth}, 1fr);`;
   }
-  board.style.cssText = `grid-template-rows: repeat(${boardWidth}, 1fr);grid-template-columns: repeat(${boardWidth}, 1fr);`;
 }
-// Button Actions
-// changeBoardSizeBtn.addEventListener("click", listener);
 
-// function changeBoardSize() {}
+function InitializeBoard() {
+  createBoard();
+}
 
-boardInitialize();
+function changeBoardSize() {
+  createBoard();
+}
+
+InitializeBoard();
+changeBoardSizeBtn.addEventListener("click", changeBoardSize);
