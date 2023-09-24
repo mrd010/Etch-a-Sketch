@@ -1,7 +1,6 @@
 :root {
   --BG: whitesmoke;
   --THEME: dodgerblue;
-  --THEME-Dark: ;
   --DARK-Color: #222;
   --HIGHLIGHT-Color: rgba(245, 245, 245, 0.9);
 }
@@ -85,4 +84,28 @@ body {
 
 .side-nav button:hover {
   background-color: var(--HIGHLIGHT-Color);
+}
+
+/* Board */
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+#board {
+  width: 600px;
+  height: 600px;
+  background-color: white;
+  border: 3px solid var(--DARK-Color);
+  border-radius: 5px;
+  display: grid;
+  /* grid-template-rows: repeat(5, 1fr);
+  grid-template-columns: repeat(5, 1fr); */
+}
+
+#board .pixel {
+  border: 1px solid #11111111;
 }
