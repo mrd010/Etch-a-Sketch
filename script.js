@@ -34,6 +34,7 @@ function updateBoardSize() {
     pixels.forEach((pixel) => {
       pixel.addEventListener("mouseover", paintPixel);
     });
+    resetCurrentBoard();
   }
 }
 
@@ -48,6 +49,7 @@ function correctInput() {
   }
 }
 
+// Paint on hover pixel
 function paintPixel() {
   // get pixel background color current opacity
   let pixelBgColor =
@@ -69,6 +71,12 @@ function paintPixel() {
     this.style.backgroundColor = newPixelBgColor;
   }
 }
+
+function resetCurrentBoard() {
+  pixels.forEach((pixel) => {
+    pixel.style.backgroundColor = "rgba(0,0,0,0)";
+  });
+}
 // MAIN ----------------------------------------------------------------------------------------------------------
 
 // Initialize Board
@@ -89,3 +97,5 @@ boardSizeInput.addEventListener("change", () => {
     changeBoardSizeBtn.style.backgroundColor = "whitesmoke";
   }
 });
+
+resetBoardBtn.addEventListener("click", resetCurrentBoard);
