@@ -111,3 +111,48 @@ body {
   border: 1px solid #11111105;
   background-color: rgba(2, 2, 2, 0);
 }
+
+/* media queries */
+@media only screen and (max-width: 992px) {
+  body {
+    flex-direction: column;
+  }
+
+  .side-nav {
+    width: 100%;
+    padding: 0;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding-right: 20px;
+  }
+
+  .side-nav .header {
+    font-size: 1rem;
+    border-right: 2px solid whitesmoke;
+    padding: 30px 15px;
+    margin: 0 auto 0 0;
+  }
+
+  .side-nav .options-menu {
+    width: 100%;
+    flex-direction: row;
+    margin: 0 0 0 20px;
+    justify-content: center;
+  }
+
+  .side-nav button,
+  .options-menu .input-field input[type="number"] {
+    padding: 10px 5px;
+    white-space: nowrap;
+  }
+
+  .options-menu .input-field input[type="number"] {
+    width: 60px;
+  }
+
+  #board {
+    width: 95vw;
+    height: 95vw;
+  }
+}
